@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: apcups-service
+  namespace: apcups
+spec:
+  selector:
+    app.kubernetes.io/name: apcups-exporter
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+  type: LoadBalancer
