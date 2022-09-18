@@ -9,7 +9,7 @@ Restart=always
 RestartSec=1
 User=nobody
 Group=nobody
-ExecStart=/usr/local/bin/prometheus_apcups_exporter.py
+ExecStart=/opt/apcups-prometheus-exporter/venv/bin/python3 /usr/local/bin/prometheus_apcups_exporter.py
 
 [Install]
 WantedBy=multi-user.target
