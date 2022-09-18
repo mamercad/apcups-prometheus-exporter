@@ -5,7 +5,8 @@ install:
 	git clone https://github.com/mamercad/apcups-prometheus-exporter.git
 	cd apcups-prometheus-exporter
 	sudo /opt/apcups-prometheus-exporter/venv/bin/pip3 install --requirement docker/requirements.txt
-	sudo cp docker/prometheus_apcups_exporter.py /usr/local/bin/prometheus_apcups_exporter.py
+	sudo cp docker/prometheus_apcups_exporter.py /opt/apcups-prometheus-exporter/prometheus_apcups_exporter.py
+	sudo cp docker/prometheus_apcups_exporter.sh /opt/apcups-prometheus-exporter/prometheus_apcups_exporter.sh
 	sudo cp systemd/apcups-prometheus-exporter.service /etc/systemd/system/apcups-prometheus-exporter.service
 	sudo systemctl daemon-reload
 	sudo systemctl enable apcups-prometheus-exporter

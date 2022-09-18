@@ -7,9 +7,10 @@ StartLimitIntervalSec=0
 Type=simple
 Restart=always
 RestartSec=1
-User=nobody
-Group=nobody
-ExecStart=/opt/apcups-prometheus-exporter/venv/bin/python3 /usr/local/bin/prometheus_apcups_exporter.py
+User=prometheus
+Group=prometheus
+WorkingDirectory=/opt/apcups-prometheus-exporter
+ExecStart=/opt/apcups-prometheus-exporter/prometheus_apcups_exporter.sh
 
 [Install]
 WantedBy=multi-user.target
